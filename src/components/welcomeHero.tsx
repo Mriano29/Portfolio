@@ -47,7 +47,7 @@ export default function WelcomeHero() {
             </a>
           </div>
         </div>
-        <div className="h-full w-full flex flex-col items-center justify-center gap-5 relative mt-3 lg:mt-0 ">
+        <div className="h-full flex flex-col items-center justify-center gap-5 relative mt-3 lg:mt-0 ">
           <div className="h-[300px] md:h-[400px] w-[225px] md:w-[300px] bg-cyan-700 rotate-8 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-3xl" />
           <img
             src="marr.jpg"

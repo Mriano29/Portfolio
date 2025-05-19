@@ -79,11 +79,11 @@ export default function Skills() {
         <div key={category}>
           <h3 className="text-xl text-blue-600 mb-2">{category}</h3>
 
-          <ul className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-9 gap-5">
+          <ul className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-9 gap-5 justify-center items-center">
             {items.map(({ name, icon }) => (
               <li
                 key={name}
-                className="w-30 h-10 border-2 border-blue-600 text-white flex flex-row items-center justify-center rounded text-sm gap-2"
+                className=" w-full h-10 border-2 border-blue-600 text-white flex flex-row items-center justify-center rounded text-sm gap-2"
               >
                 <div className="text-2xl mb-1">{icon}</div>
                 <span>{name}</span>
