@@ -6,8 +6,8 @@ export function NavBar() {
   const [showLine, setShowLine] = useState(true);
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setShowNav(true), 1000); // Show navbar
-    const timer2 = setTimeout(() => setShowLine(false), 1700); // Hide line after animation
+    const timer1 = setTimeout(() => setShowNav(true), 1000);
+    const timer2 = setTimeout(() => setShowLine(false), 1700);
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
@@ -27,38 +27,33 @@ export function NavBar() {
           />
         )}
       </AnimatePresence>
-
+      {!showNav && <div className="hidden lg:block top-0 w-full h-15" />}
       {showNav && (
         <motion.nav
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="w-full bg-white shadow-md py-4 hidden lg:flex justify-between items-center top-0 z-40"
+          className="w-full  shadow-md py-4 hidden lg:flex justify-between items-center top-0 z-40"
         >
           <a
             href="#welcome"
-            className="text-xl font-bold text-blue-600 hover:text-blue-400 transition"
+            className="text-xl font-bold text-blue-600 hover:text-blue-600 transition"
           >
             Miguel Riaño
           </a>
-          <ul className="flex space-x-6 text-gray-700 font-medium">
+          <ul className="flex space-x-6 text-white font-medium">
             <li>
-              <a href="#about" className="hover:text-blue-600 transition">
-                About me
+              <a href="#" className="hover:text-blue-600 transition">
+                Profesional
               </a>
             </li>
             <li>
-              <a href="#skills" className="hover:text-blue-600 transition">
-                Skills
+              <a href="#" className="hover:text-blue-600 transition">
+                Personal
               </a>
             </li>
             <li>
-              <a href="#projects" className="hover:text-blue-600 transition">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-blue-600 transition">
+              <a href="#" className="hover:text-blue-600 transition">
                 Contact
               </a>
             </li>

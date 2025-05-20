@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { BsFiletypeSql } from "react-icons/bs";
 import {
   FaCss3Alt,
@@ -70,27 +71,70 @@ export default function Skills() {
     ],
   };
 
+  const fadeInVariant = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section id="skills" className="flex flex-col gap-5 w-full pb-10">
-      <h2 className="text-3xl xl:text-5xl text-blue-600 font-semibold text-center">
+      <motion.h2
+        className="text-3xl xl:text-5xl text-blue-600 font-semibold text-center"
+        variants={fadeInVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+      >
         Skills
-      </h2>
-      {Object.entries(skills).map(([category, items]) => (
-        <div key={category}>
+      </motion.h2>
+
+      {Object.entries(skills).map(([category, items], idx) => (
+        <motion.div
+          key={category}
+          variants={fadeInVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 + idx * 0.3 }}
+        >
           <h3 className="text-xl text-blue-600 mb-2">{category}</h3>
 
-          <ul className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-9 gap-5 justify-center items-center">
+          <motion.ul
+            className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-9 gap-5 justify-center items-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1,
+                  delayChildren: 0.3,
+                },
+              },
+            }}
+          >
             {items.map(({ name, icon }) => (
-              <li
+              <motion.li
                 key={name}
-                className=" w-full h-10 border-2 border-blue-600 text-white flex flex-row items-center justify-center rounded text-sm gap-2"
+                className="w-full h-10 border-2 border-blue-600 text-white flex flex-row items-center justify-center rounded text-sm gap-2"
+                variants={fadeInVariant}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
               >
                 <div className="text-2xl mb-1">{icon}</div>
                 <span>{name}</span>
-              </li>
+              </motion.li>
             ))}
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
       ))}
     </section>
   );
