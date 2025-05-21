@@ -69,11 +69,15 @@ export function Contact() {
         >
           <FaLinkedin size={40} />
         </motion.a>
-        <a href="/MarrCV.pdf" download="MarrCV.pdf">
-          <button className="border-2 border-blue-600 text-blue-600 font-semibold py-2 px-4 rounded transition duration-300 transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:border-blue-600">
-            Copy my email
-          </button>
-        </a>
+        <button
+          onClick={() => {
+            navigator.clipboard.writeText("mriano290801@gmail.com");
+            alert("Correo copiado al portapapeles");
+          }}
+          className="border-2 border-blue-600 text-blue-600 font-semibold py-2 px-4 rounded transition duration-300 transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:border-blue-600"
+        >
+          Copy my email
+        </button>
       </motion.div>
     </section>
   );

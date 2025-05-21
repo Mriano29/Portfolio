@@ -5,7 +5,7 @@ export function WelcomeHero() {
   return (
     <section
       id="welcome"
-      className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-evenly md:gap-5 "
+      className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-evenly sm:gap-10 "
     >
       {/**Text */}
       <motion.div
@@ -53,7 +53,7 @@ export function WelcomeHero() {
           >
             <FaLinkedin size={40} />
           </motion.a>
-          <a href="/MarrCV.pdf" download="MarrCV.pdf">
+          <a href="MarrCV.pdf" download="MarrCV.pdf">
             <button className="border-2 border-blue-600 text-blue-600 font-semibold py-2 px-4 rounded transition duration-300 transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:border-blue-600">
               Download my CV
             </button>
@@ -62,7 +62,7 @@ export function WelcomeHero() {
       </motion.div>
       {/**Image */}
       <motion.div
-        className="h-full flex flex-col items-center justify-center gap-5 relative mt-3 lg:mt-0"
+        className="h-fit flex flex-col items-center justify-center gap-5 relative mt-3 lg:mt-0"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
