@@ -32,7 +32,7 @@ import {
   TbBrandVite,
 } from "react-icons/tb";
 
-export default function Skills() {
+export function Skills() {
   const skills = {
     Languages: [
       { name: "JavaScript", icon: <IoLogoJavascript /> },

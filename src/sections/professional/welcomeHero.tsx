@@ -1,12 +1,13 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-export default function WelcomeHero() {
+export function WelcomeHero() {
   return (
     <section
       id="welcome"
-      className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-10"
+      className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-evenly md:gap-5 "
     >
+      {/**Text */}
       <motion.div
         className="flex flex-col lg:gap-2 max-w-[600px] justify-center text-center lg:text-justify w-full"
         initial={{ opacity: 0, x: -50 }}
@@ -23,24 +24,26 @@ export default function WelcomeHero() {
         </h2>
         <p className="text-gray-300 text-sm md:text-lg lg:text-xl xl:text-2xl">
           I'm a junior software developer from Spain with a keen passion for
-          UI/UX design. I strive to build visually engaging and intuitive
-          websites, always aiming to improve the user experience. I'm eager to
-          discover new opportunities that allow me to grow and refine my skills.
+          UI/UX design. I strive to build visually engaging and intuitive apps
+          and websites, always aiming to improve the user experience. I'm eager
+          to discover new opportunities that allow me to grow and refine my
+          skills.
         </p>
-
         <motion.div
           className="flex flex-row gap-5 mt-5 items-center justify-center lg:justify-start"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <a
+          <motion.a
             href="https://github.com/Mriano29"
             target="_blank"
             className="text-white"
+            whileHover={{ scale: 1.2 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             <FaGithub size={40} />
-          </a>
+          </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/mriano29/"
             target="_blank"
@@ -50,25 +53,21 @@ export default function WelcomeHero() {
           >
             <FaLinkedin size={40} />
           </motion.a>
-          <motion.a
-            href="/MarrCV.pdf"
-            download="MarrCV.pdf"
-            className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 font-semibold py-2 px-4 rounded transition duration-300 inline-block"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            Download my CV
-          </motion.a>
+          <a href="/MarrCV.pdf" download="MarrCV.pdf">
+            <button className="border-2 border-blue-600 text-blue-600 font-semibold py-2 px-4 rounded transition duration-300 transform hover:scale-105 hover:bg-blue-600 hover:text-white hover:border-blue-600">
+              Download my CV
+            </button>
+          </a>
         </motion.div>
       </motion.div>
-
-      {/* Imagen */}
+      {/**Image */}
       <motion.div
         className="h-full flex flex-col items-center justify-center gap-5 relative mt-3 lg:mt-0"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
+        <div className="h-[300px] md:h-[400px] w-[225px] md:w-[300px] bg-cyan-900 rotate-15 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-3xl" />
         <div className="h-[300px] md:h-[400px] w-[225px] md:w-[300px] bg-cyan-700 rotate-8 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 rounded-3xl" />
         <img
           src="marr.jpg"

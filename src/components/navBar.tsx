@@ -27,33 +27,32 @@ export function NavBar() {
           />
         )}
       </AnimatePresence>
-      {!showNav && <div className="hidden lg:block top-0 w-full h-15" />}
       {showNav && (
         <motion.nav
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="w-full  shadow-md py-4 hidden lg:flex justify-between items-center top-0 z-40"
+          className=" fixed w-full py-4 hidden lg:flex justify-between items-center top-0 z-50 bg-gray-950 px-10"
         >
           <a
-            href="#welcome"
+            href="/"
             className="text-xl font-bold text-blue-600 hover:text-blue-600 transition"
           >
             Miguel Riaño
           </a>
           <ul className="flex space-x-6 text-white font-medium">
             <li>
-              <a href="#" className="hover:text-blue-600 transition">
+              <a href="/" className="hover:text-blue-600 transition">
                 Profesional
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-600 transition">
+              <a href="personal" className="hover:text-blue-600 transition">
                 Personal
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-600 transition">
+              <a href="contact" className="hover:text-blue-600 transition">
                 Contact
               </a>
             </li>

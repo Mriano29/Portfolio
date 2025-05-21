@@ -1,4 +1,4 @@
-export default function Projects() {
+export function Projects() {
   const experience = [
     {
       title: "Internship at Reply Next",
