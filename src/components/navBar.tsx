@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function NavBar() {
   const [showNav, setShowNav] = useState(false);
@@ -34,27 +35,27 @@ export function NavBar() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className=" fixed w-full py-4 hidden lg:flex justify-between items-center top-0 z-50 bg-gray-950 px-10"
         >
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-xl font-bold text-blue-600 hover:text-blue-600 transition"
           >
             Miguel Riaño
-          </a>
+          </Link>
           <ul className="flex space-x-6 text-white font-medium">
             <li>
-              <a href="/" className="hover:text-blue-600 transition">
+              <Link to="/" className="hover:text-blue-600 transition">
                 Profesional
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="personal" className="hover:text-blue-600 transition">
+              <Link to="personal" className="hover:text-blue-600 transition">
                 Personal
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="contact" className="hover:text-blue-600 transition">
+              <Link to="contact" className="hover:text-blue-600 transition">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </motion.nav>
