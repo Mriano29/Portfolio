@@ -1,6 +1,6 @@
 import { Routes, Route, HashRouter, useLocation } from "react-router-dom";
 import { NavBar } from "./components/navBar";
-import { ContactPage, Personal, Professional } from "./pages";
+import { ContactPage, Professional } from "./pages";
 import { motion, AnimatePresence } from "framer-motion";
 
 function AnimatedRoutes() {
@@ -19,19 +19,6 @@ function AnimatedRoutes() {
               transition={{ duration: 0.5 }}
             >
               <Professional />
-            </motion.div>
-          }
-        />
-        <Route
-          path="personal"
-          element={
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Personal />
             </motion.div>
           }
         />

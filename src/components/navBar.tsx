@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const navLinks = [
   { label: "Professional", to: "/" },
-  { label: "Personal", to: "personal" },
   { label: "Contact", to: "contact" },
 ];
 

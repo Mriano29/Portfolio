@@ -1,4 +1,9 @@
-import { Projects, Skills, WelcomeHero } from "../sections";
+import {
+
+  Projects,
+  Skills,
+  WelcomeHero,
+} from "../sections";
 
 export function Professional() {
   return (
@@ -6,6 +11,7 @@ export function Professional() {
       <WelcomeHero />
       <Skills />
       <Projects />
+
     </main>
   );
 }
